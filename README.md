@@ -257,3 +257,8 @@ The tests do not call Gemini and do not require an API key.
 <p align="center">
   Dibuat untuk membantu merencanakan perjalanan dengan Gemini AI.
 </p>
+
+
+## Latest CI verification
+
+Verified on **16 November 2026** on branch `main`: **6 Node.js request-validation tests passed** using Node.js 22. These tests cover valid conversation structure, role ordering, blank/oversized messages, and message-count limits. The automated suite does not call the live Gemini API and therefore does not validate provider availability, billing, quota, or model response quality.
