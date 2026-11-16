@@ -216,20 +216,27 @@ Instruksi sistem saat ini berada di dalam route `POST /api/chat` pada file `inde
 
 Untuk mengubah gaya bahasa atau cakupan bantuan, sesuaikan nilai `systemInstruction` di file tersebut.
 
-## Keamanan dan catatan penggunaan
+## Security and operational notes
 
-- **Jaga API key:** simpan `GEMINI_API_KEY` di file `.env` atau secret manager. Jangan pernah mengirim API key ke frontend atau melakukan commit terhadap file `.env`.
-- **Batasi CORS:** source saat ini menggunakan `cors()` tanpa pembatasan origin. Untuk deployment, atur origin frontend yang benar.
-- **Tambahkan rate limiting:** endpoint chat saat ini belum membatasi jumlah request. Tambahkan rate limiter untuk mencegah penyalahgunaan dan pemakaian API yang tidak terkendali.
-- **Validasi input:** sebelum deployment, validasi tipe `conversation`, role dan teks setiap pesan, serta batasi ukuran riwayat dan request body.
-- **Tangani error dengan aman:** endpoint saat ini mengirim `e.message` ke client. Untuk production, simpan detail teknis di server log dan kirim pesan error umum ke pengguna.
-- **Perhatikan biaya dan kuota:** setiap pesan mengirim riwayat percakapan sebelumnya kembali ke API, sehingga ukuran konteks dan penggunaan token dapat meningkat seiring panjangnya percakapan.
+- Store `GEMINI_API_KEY` only in `.env` or a secret manager. Never expose it to frontend code or commit it.
+- Same-origin requests work by default. Set `CORS_ORIGINS` only when a separate trusted frontend origin is required.
+- The chat endpoint limits each IP to 10 requests per 10 minutes per Node process. This in-memory limiter is suitable for a single-process demo; use shared storage such as Redis for multi-instance deployments.
+- Request validation enforces the conversation shape, alternating `user`/`model` roles, the final user message, a maximum of 20 messages, and text-size limits.
+- The JSON request body is capped at 64 KB. Server-side provider errors are logged and returned to clients as generic messages.
+- Conversation history is still stored only in the browser page memory and is lost on refresh.
+- Every request sends the accumulated conversation history to Gemini. Monitor token usage and API quota before public deployment.
 
-Aplikasi ini merupakan proyek demonstrasi dan belum dilengkapi seluruh kontrol keamanan yang dibutuhkan untuk layanan publik berskala produksi.
+The project is a demonstration app. Before exposing it publicly, add persistent conversation storage (if required), shared rate limiting, monitoring, abuse controls, and tests against a configured staging API key.
 
-## Pengujian
+## Tests
 
-Saat ini `package.json` belum menyediakan test suite. Script `npm test` masih berupa placeholder yang mengembalikan error. Uji manual dengan menjalankan server, membuka halaman, lalu mengirim pesan travelling. Pengujian otomatis untuk endpoint dan frontend dapat ditambahkan pada pengembangan berikutnya.
+Run the request validation unit tests:
+
+```bash
+npm test
+```
+
+The tests do not call Gemini and do not require an API key.
 
 ## Referensi
 
