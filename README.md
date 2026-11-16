@@ -35,10 +35,6 @@
 
 Aplikasi terdiri dari backend Express.js dan frontend HTML, CSS, serta JavaScript biasa. Riwayat percakapan disimpan sementara di browser selama halaman masih terbuka.
 
-## Tampilan dan gambar
-
-Banner di bagian atas menggunakan foto **commercial airplane in flight** karya **Sebastian (@gsebastian)** dari [Unsplash](https://unsplash.com/photos/commercial-airplane-in-flight-7NmWj7F6eoA). Foto tersebut merupakan visual pendukung README, bukan tangkapan layar aplikasi.
-
 ## Fitur
 
 - Chat interaktif dengan model Gemini melalui backend.
@@ -234,12 +230,6 @@ Saat ini `package.json` belum menyediakan test suite. Script `npm test` masih be
 - [Google GenAI SDK for JavaScript](https://github.com/googleapis/js-genai)
 - [Google AI Studio — API Keys](https://aistudio.google.com/app/apikey)
 - [Express Documentation](https://expressjs.com/)
-
-## Kredit foto
-
-Foto banner: **Sebastian (@gsebastian)** — [Commercial airplane in flight, Unsplash](https://unsplash.com/photos/commercial-airplane-in-flight-7NmWj7F6eoA). Digunakan sesuai [Unsplash License](https://unsplash.com/license).
-
----
 
 <p align="center">
   Dibuat untuk membantu merencanakan perjalanan dengan Gemini AI.
