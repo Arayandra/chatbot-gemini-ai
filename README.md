@@ -1,10 +1,4 @@
-<!-- Banner photograph by Sebastian (@gsebastian), via Unsplash. This is not an application screenshot. -->
-
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1517260468809-807bfd11d968?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600" alt="Commercial airplane in flight" width="100%">
-</p>
-
-<h1 align="center">Gemini AI Travel Chatbot</h1>
+# Gemini AI Travel Chatbot
 
 <p align="center">
   Chatbot perencana perjalanan berbasis Gemini AI.
@@ -26,6 +20,14 @@
 </p>
 
 ---
+
+## Preview tampilan chatbot
+
+<p align="center">
+  <img src="./docs/chatbot-ui-preview.svg" alt="Preview interface Gemini AI Chatbot dengan percakapan perencanaan itinerary Bali, bubble chat, kolom pesan, dan tombol Send" width="820">
+</p>
+
+<sub>Preview ini merupakan mockup antarmuka yang mengikuti struktur halaman chatbot pada proyek. Contoh percakapan di dalam gambar hanya untuk ilustrasi dokumentasi.</sub>
 
 ## Tentang proyek
 
