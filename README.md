@@ -1,5 +1,7 @@
 # Gemini AI Travel Chatbot
 
+![CI](https://github.com/Arayandra/chatbot-gemini-ai/actions/workflows/ci.yml/badge.svg?branch=main)
+
 <p align="center">
   Chatbot perencana perjalanan berbasis Gemini AI.
   <br>
@@ -22,6 +24,9 @@
 ---
 
 ## Test
+
+Repository ini belum menyimpan `package-lock.json`. Setelah menjalankan `npm install`, simpan file lock tersebut ke Git agar versi dependency dapat direproduksi; workflow CI kemudian dapat menggunakan `npm ci`.
+
 
 Run the request-validation unit tests with:
 
@@ -69,7 +74,7 @@ Model ditentukan melalui konstanta `GEMINI_MODEL` di `index.js`. Ketersediaan na
 
 ## Persyaratan
 
-- Node.js 18 atau lebih baru.
+- Node.js 22 atau lebih baru (sesuai batas minimum pada `package.json`).
 - npm.
 - Gemini API key dari [Google AI Studio](https://aistudio.google.com/app/apikey).
 - Koneksi internet untuk mengakses Gemini API.
