@@ -5,6 +5,7 @@ const chatBox = document.getElementById('chat-box');
 const submitButton = form.querySelector('button[type="submit"]');
 
 const conversation = [];
+const MAX_CONVERSATION_MESSAGES = 20;
 
 // Submit chat
 form.addEventListener('submit', async (event) => {
@@ -18,6 +19,12 @@ form.addEventListener('submit', async (event) => {
 
   // Tampilkan pesan user
   appendMessage('user', userMessage);
+
+  // Keep the request within the backend conversation limit. Stored history
+  // is kept in complete user/model pairs before appending the next user turn.
+  while (conversation.length >= MAX_CONVERSATION_MESSAGES) {
+    conversation.splice(0, 2);
+  }
 
   // Simpan ke history
   conversation.push({
@@ -57,10 +64,9 @@ form.addEventListener('submit', async (event) => {
 
     // Validasi response
     if (!data?.result?.trim()) {
-      replaceMessage(
-        thinkingMessage,
-        'Maaf, saya belum mendapatkan jawabannya.'
-      );
+      const fallbackReply = 'Maaf, saya belum mendapatkan jawabannya.';
+      replaceMessage(thinkingMessage, fallbackReply);
+      conversation.push({ role: 'model', text: fallbackReply });
       return;
     }
 
@@ -81,10 +87,10 @@ form.addEventListener('submit', async (event) => {
 
     stopThinkingAnimation(thinkingMessage);
 
-    replaceMessage(
-      thinkingMessage,
-      'Maaf, terjadi gangguan. Silakan coba lagi.'
-    );
+    const fallbackReply = 'Maaf, terjadi gangguan. Silakan coba lagi.';
+    replaceMessage(thinkingMessage, fallbackReply);
+    // Preserve a user/model pair so the next request remains valid.
+    conversation.push({ role: 'model', text: fallbackReply });
 
   } finally {
     input.disabled = false;
