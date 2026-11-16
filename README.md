@@ -1,7 +1,4 @@
-<!--
-  Banner image by Gabriele Merlino via Unsplash.
-  The application UI itself is not represented by this banner image.
--->
+<!-- Banner photograph by Sebastian (@gsebastian), via Unsplash. This is not an application screenshot. -->
 
 <p align="center">
   <img src="https://images.unsplash.com/photo-1517260468809-807bfd11d968?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600" alt="Commercial airplane in flight" width="100%">
