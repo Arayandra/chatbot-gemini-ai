@@ -21,13 +21,15 @@
 
 ---
 
-## Preview tampilan chatbot
+## Test
 
-<p align="center">
-  <img src="./docs/chatbot-ui-preview.svg" alt="Preview interface Gemini AI Chatbot dengan percakapan perencanaan itinerary Bali, bubble chat, kolom pesan, dan tombol Send" width="820">
-</p>
+Run the request-validation unit tests with:
 
-<sub>Preview ini merupakan mockup antarmuka yang mengikuti struktur halaman chatbot pada proyek. Contoh percakapan di dalam gambar hanya untuk ilustrasi dokumentasi.</sub>
+```bash
+npm test
+```
+
+The repository does not include a captured screenshot of a running application. The previous SVG interface mockup has been removed so the README does not present an illustration as a real application screenshot.
 
 ## Tentang proyek
 
@@ -45,6 +47,9 @@ Aplikasi terdiri dari backend Express.js dan frontend HTML, CSS, serta JavaScrip
 - Tampilan pesan pengguna dan bot dibedakan.
 - Layout sederhana yang menyesuaikan layar desktop dan perangkat mobile.
 - API key Gemini disimpan pada environment backend, bukan di JavaScript frontend.
+- Request payload dibatasi ukuran, jumlah pesan, panjang teks, dan urutan role.
+- Endpoint chat memiliki batas 10 permintaan per IP setiap 10 menit per proses; gunakan shared rate-limit storage saat menjalankan banyak instance.
+- CORS eksternal dinonaktifkan secara default dan hanya dibuka untuk origin yang ditentukan melalui `CORS_ORIGINS`.
 
 > **Batasan saat ini:** percakapan hanya tersimpan di memori halaman. Refresh atau menutup halaman akan menghapus riwayat chat. Aplikasi belum memiliki login, penyimpanan database, maupun dashboard pengguna.
 
@@ -107,6 +112,8 @@ Isi file `.env`:
 ```dotenv
 GEMINI_API_KEY=masukkan_api_key_gemini_di_sini
 PORT=3000
+# Optional: comma-separated trusted origins; same-origin works without this
+CORS_ORIGINS=
 ```
 
 Ganti nilai `GEMINI_API_KEY` dengan API key milik Anda. Jangan menuliskan API key di `public/script.js`, HTML, atau file yang akan dipublikasikan. File `.env` sudah dikecualikan melalui `.gitignore`.
