@@ -4,7 +4,7 @@
 -->
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1760229803660-fc5d996d9b79?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600" alt="Commercial airplane flying above the clouds" width="100%">
+  <img src="https://images.unsplash.com/photo-1517260468809-807bfd11d968?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600" alt="Commercial airplane in flight" width="100%">
 </p>
 
 <h1 align="center">Gemini AI Travel Chatbot</h1>
@@ -38,15 +38,7 @@ Aplikasi terdiri dari backend Express.js dan frontend HTML, CSS, serta JavaScrip
 
 ## Tampilan dan gambar
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Arayandra/chatbot-gemini-ai/main/public/frontend/assets/airline.jpg" alt="Airline mark included in the repository" width="180">
-</p>
-
-<p align="center">
-  <em>Logo pesawat yang tersedia sebagai aset repository.</em>
-</p>
-
-**Foto header:** pesawat komersial di atas awan. Foto ini merupakan visual pendukung README, bukan tangkapan layar aplikasi.
+Banner di bagian atas menggunakan foto **commercial airplane in flight** karya **Sebastian (@gsebastian)** dari [Unsplash](https://unsplash.com/photos/commercial-airplane-in-flight-7NmWj7F6eoA). Foto tersebut merupakan visual pendukung README, bukan tangkapan layar aplikasi.
 
 ## Fitur
 
@@ -246,7 +238,7 @@ Saat ini `package.json` belum menyediakan test suite. Script `npm test` masih be
 
 ## Kredit foto
 
-Foto banner pesawat oleh **Gabriele Merlino**, melalui [Unsplash](https://unsplash.com/photos/a-commercial-airplane-flying-in-a-cloudy-sky-1kbFS4MVTeU), digunakan sesuai [Unsplash License](https://unsplash.com/license).
+Foto banner: **Sebastian (@gsebastian)** — [Commercial airplane in flight, Unsplash](https://unsplash.com/photos/commercial-airplane-in-flight-7NmWj7F6eoA). Digunakan sesuai [Unsplash License](https://unsplash.com/license).
 
 ---
 
