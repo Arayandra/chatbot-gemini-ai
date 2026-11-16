@@ -25,6 +25,8 @@
 
 ## Test
 
+This repository does not yet include `package-lock.json`. Run `npm install`, commit the generated lockfile, and then use `npm ci` in CI for reproducible dependency installation.
+
 Repository ini belum menyimpan `package-lock.json`. Setelah menjalankan `npm install`, simpan file lock tersebut ke Git agar versi dependency dapat direproduksi; workflow CI kemudian dapat menggunakan `npm ci`.
 
 
@@ -234,6 +236,8 @@ Untuk mengubah gaya bahasa atau cakupan bantuan, sesuaikan nilai `systemInstruct
 The project is a demonstration app. Before exposing it publicly, add persistent conversation storage (if required), shared rate limiting, monitoring, abuse controls, and tests against a configured staging API key.
 
 ## Tests
+
+This repository does not yet include `package-lock.json`. Run `npm install`, commit the generated lockfile, and then use `npm ci` in CI for reproducible dependency installation.
 
 Run the request validation unit tests:
 
